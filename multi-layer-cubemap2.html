@@ -392,7 +392,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             let img2 = document.createElement('img'); // Use DOM HTMLImageElement
             img2.src = 'media/textures/stereo_cube_map.png';
             img2.onload = function() {
-              //cube_face_size = _getCubeTextureSize(img2);
+              cube_face_size = (compressed.checked) ? 512 : _getCubeTextureSize(img2);
               cube_map_image = img2;
               onImageLoaded(session);
             }
@@ -406,7 +406,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             let img2 = document.createElement('img'); // Use DOM HTMLImageElement
             img2.src = 'media/textures/mono_cube_map.png';
             img2.onload = function() {
-              //cube_face_size = _getCubeTextureSize(img2);
+              cube_face_size = (compressed.checked) ? 512 : _getCubeTextureSize(img2);
               cube_map_image = img2;
               onImageLoaded(session);
             }
