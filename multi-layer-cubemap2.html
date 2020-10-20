@@ -124,7 +124,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       function loadBasisTexture(callback) {
         var loader = new THREE.BasisTextureLoader();
         var self = this;
-        loader.setTranscoderPath( '.' );
+        loader.setTranscoderPath( 'https://diegomarcos.com/cubemaps-webgl/js/' );
         loader.detectSupport( gl );
         loader.load('https://diegomarcos.com/cubemaps-webgl/images/bricks.basis', function ( evt ) {
           textureBuffer = evt.mipmaps[0];
