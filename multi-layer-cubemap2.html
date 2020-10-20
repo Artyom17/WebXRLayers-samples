@@ -277,13 +277,19 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         //const tex = __getNewGLTexObj(gl.TEXTURE_CUBE_MAP);
 
         // our target cube face size.
-        const cubeFaceSize = _getCubeTextureSize(sourceImageElement);
-        cube_face_size = cubeFaceSize;
-        //this._updateMaxGPUMemUsed(cubeFaceSize);
+        let cubeFaceSize;
+        let textureSourceCubeFaceSize;
+        if (textureBuffer) {
+          cubeFaceSize = textureBuffer.width;
+          textureSourceCubeFaceSize = Math.min(textureBuffer.width, textureBuffer.height);
+        } else {
+          cubeFaceSize = _getCubeTextureSize(sourceImageElement);
+          cube_face_size = cubeFaceSize;
+          //this._updateMaxGPUMemUsed(cubeFaceSize);
 
-        // the input texture cube face size.
-        const textureSourceCubeFaceSize = Math.min(sourceImageElement.width, sourceImageElement.height);
-
+          // the input texture cube face size.
+          textureSourceCubeFaceSize = Math.min(sourceImageElement.width, sourceImageElement.height);
+        }
         // dont flip the pixels as we load them into the texture buffer.
         // TEXTURE_CUBE_MAP expects the Y to be flipped for the faces and it already
         // is flipped in our texture image.
