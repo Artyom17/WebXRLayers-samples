@@ -284,12 +284,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           textureSourceCubeFaceSize = Math.min(textureBuffer.width, textureBuffer.height);
         } else {
           cubeFaceSize = _getCubeTextureSize(sourceImageElement);
-          cube_face_size = cubeFaceSize;
           //this._updateMaxGPUMemUsed(cubeFaceSize);
 
           // the input texture cube face size.
           textureSourceCubeFaceSize = Math.min(sourceImageElement.width, sourceImageElement.height);
         }
+        cube_face_size = cubeFaceSize;
         // dont flip the pixels as we load them into the texture buffer.
         // TEXTURE_CUBE_MAP expects the Y to be flipped for the faces and it already
         // is flipped in our texture image.
