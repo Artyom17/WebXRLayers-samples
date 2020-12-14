@@ -532,7 +532,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         xrFramebuffer = gl.createFramebuffer();
         xrGLFactory = new XRWebGLBinding(session, gl);
         session.requestReferenceSpace('local').then((refSpace) => {
-          let projlayer = xrGLFactory.createProjectionLayer( {space: refSpace,
+          let projlayer = xrGLFactory.createProjectionLayer( {space: refSpace, ignoreDepthValues:true,
             depthFormat: do_stencil_buffer.checked?gl.DEPTH24_STENCIL8:gl.DEPTH_COMPONENT24});
           let eqrlayer = xrGLFactory.createEquirectLayer( {
             space: refSpace,
